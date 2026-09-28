@@ -121,17 +121,22 @@
   }
   .mock-list { border-right: 1px solid var(--line); padding: 16px 0; }
   .mock-head { display: flex; align-items: center; justify-content: space-between; padding: 0 16px 12px; color: var(--muted); font-size: 12px; }
-  .live { display: inline-flex; align-items: center; gap: 6px; color: var(--live); }
-  .live::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--live); box-shadow: 0 0 0 0 rgba(95, 212, 166, .6); }
+  .feed-state { display: inline-flex; align-items: center; gap: 6px; color: var(--faint); }
+  .feed-state::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--faint); }
+  .feed-state.is-live { color: var(--live); }
+  .feed-state.is-live::before { background: var(--live); box-shadow: 0 0 0 0 rgba(95, 212, 166, .6); }
+  .mock-list li { transition: background-color .3s ease; }
+  .mock-detail > * { transition: opacity .25s ease; }
+  .mock-detail.swap > * { opacity: 0; }
   @media (prefers-reduced-motion: no-preference) {
-    .live::before { animation: pulse 2.4s ease-out infinite; }
+    .feed-state.is-live::before { animation: pulse 2.4s ease-out infinite; }
     @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(95,212,166,.55); } 80%, 100% { box-shadow: 0 0 0 7px rgba(95,212,166,0); } }
   }
   .mock-list ul { list-style: none; margin: 0; padding: 0; }
   .mock-list li { padding: 12px 16px; border-top: 1px solid var(--line); display: grid; gap: 8px; }
   .mock-list li.on { background: var(--surface-2); box-shadow: inset 2px 0 0 var(--accent); }
   .mock-list .row { display: flex; justify-content: space-between; gap: 12px; }
-  .mock-list .t { color: var(--text); font-weight: 500; }
+  .mock-list .t { color: var(--text); font-weight: 500; line-height: 1.35; }
   .mock-list li:not(.on) .t { color: var(--muted); font-weight: 400; }
   .mock-list time { color: var(--faint); font-variant-numeric: tabular-nums; }
   .bar { display: block; height: 6px; border-radius: 3px; background: var(--line-strong); }
@@ -144,10 +149,9 @@
   .mock-sec > span { font-size: 11.5px; color: var(--faint); }
   .mock-sec p { margin: 0; color: var(--text); line-height: 1.5; }
   .people { display: grid; gap: 10px; }
-  .person { display: grid; grid-template-columns: 26px 1fr auto; gap: 10px; align-items: center; }
+  .person { display: grid; grid-template-columns: 26px 1fr; gap: 10px; align-items: center; }
   .avatar { width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg, #22314D, #2E4268); }
   .person .bars { display: grid; gap: 5px; }
-  .fit { font-size: 11.5px; color: var(--accent); font-variant-numeric: tabular-nums; }
   .mock-actions { margin-top: auto; display: flex; gap: 8px; }
   .mock-btn { font-size: 12.5px; padding: 8px 12px; border-radius: 7px; background: var(--accent); color: var(--accent-ink); font-weight: 500; }
   .mock-btn.ghost { background: transparent; color: var(--muted); border: 1px solid var(--line-strong); }
@@ -309,10 +313,10 @@
         </div>
       </div>
 
-      <div class="mock" role="img" aria-label="The Ascribd platform showing today's story signals, with one opened: an angle, the best-fit journalists and a button to draft the pitch.">
+      <div class="mock" id="mock" role="img" aria-label="The Ascribd platform: today's story signals for UK financial and professional services, with one opened to show a suggested angle and best-fit journalists.">
         <div class="mock-list" aria-hidden="true">
-          <div class="mock-head"><span>Today's signals</span><span class="live">Live</span></div>
-          <ul>
+          <div class="mock-head"><span>Today's signals</span><span class="feed-state" id="feed-state">Example</span></div>
+          <ul id="sig-list">
             <li class="on"><div class="row"><span class="t">SME lending appetite shifts</span><time>06:12</time></div><span class="bar" style="width: 78%"></span></li>
             <li><div class="row"><span class="t">Regulator signals a review</span><time>07:05</time></div><span class="bar" style="width: 62%"></span></li>
             <li><div class="row"><span class="t">Rival launches savings product</span><time>08:30</time></div><span class="bar" style="width: 70%"></span></li>
@@ -320,21 +324,21 @@
             <li><div class="row"><span class="t">Regional growth figures due</span><time>10:02</time></div><span class="bar" style="width: 66%"></span></li>
           </ul>
         </div>
-        <div class="mock-detail" aria-hidden="true">
-          <div class="chips"><span class="chip good">Strong fit</span><span class="chip">Window: 48 hours</span></div>
-          <h3>SME lending appetite shifts</h3>
+        <div class="mock-detail" id="sig-detail" aria-hidden="true">
+          <div class="chips"><span class="chip good" id="sig-sector">Financial services</span><span class="chip" id="sig-age">Window: 48 hours</span></div>
+          <h3 id="sig-title">SME lending appetite shifts</h3>
           <div class="mock-sec">
-            <span>Your angle</span>
-            <p>Your regional lending data gives an early read on the slowdown.</p>
+            <span>Suggested angle</span>
+            <p id="sig-angle">A lender's regional data gives an early read on the slowdown.</p>
             <span class="bar" style="width: 92%"></span>
             <span class="bar" style="width: 74%"></span>
           </div>
           <div class="mock-sec">
             <span>Best-fit journalists</span>
             <div class="people">
-              <div class="person"><span class="avatar"></span><span class="bars"><span class="bar" style="width: 46%"></span><span class="bar" style="width: 30%; opacity: .6"></span></span><span class="fit">94</span></div>
-              <div class="person"><span class="avatar"></span><span class="bars"><span class="bar" style="width: 38%"></span><span class="bar" style="width: 34%; opacity: .6"></span></span><span class="fit">88</span></div>
-              <div class="person"><span class="avatar"></span><span class="bars"><span class="bar" style="width: 52%"></span><span class="bar" style="width: 26%; opacity: .6"></span></span><span class="fit">81</span></div>
+              <div class="person"><span class="avatar"></span><span class="bars"><span class="bar" style="width: 46%"></span><span class="bar" style="width: 30%; opacity: .6"></span></span></div>
+              <div class="person"><span class="avatar"></span><span class="bars"><span class="bar" style="width: 38%"></span><span class="bar" style="width: 34%; opacity: .6"></span></span></div>
+              <div class="person"><span class="avatar"></span><span class="bars"><span class="bar" style="width: 52%"></span><span class="bar" style="width: 26%; opacity: .6"></span></span></div>
             </div>
           </div>
           <div class="mock-actions"><span class="mock-btn">Draft pitch</span><span class="mock-btn ghost">Save for later</span></div>
@@ -508,6 +512,74 @@
 </footer>
 
 <script>
+  // Live signals from /api/signals (refreshed every 3 hours). Falls back to the example above.
+  (function () {
+    var list = document.getElementById('sig-list');
+    var detail = document.getElementById('sig-detail');
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var tz = 'Europe/London';
+
+    function hhmm(d) {
+      try { return d.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: tz }); } catch (e) { return ''; }
+    }
+    function ago(d) {
+      var mins = Math.max(1, Math.round((Date.now() - d.getTime()) / 60000));
+      if (mins < 60) return mins + ' min ago';
+      var h = Math.round(mins / 60);
+      return h < 24 ? h + (h === 1 ? ' hour ago' : ' hours ago') : 'Yesterday';
+    }
+    function show(sig, instant) {
+      var apply = function () {
+        document.getElementById('sig-sector').textContent = sig.sector;
+        document.getElementById('sig-age').textContent = sig.published ? ago(new Date(sig.published)) : 'Today';
+        document.getElementById('sig-title').textContent = sig.headline;
+        document.getElementById('sig-angle').textContent = sig.angle;
+        detail.classList.remove('swap');
+      };
+      if (instant || reduce) return apply();
+      detail.classList.add('swap');
+      setTimeout(apply, 250);
+    }
+
+    fetch('/api/signals').then(function (r) {
+      if (!r.ok) throw new Error(r.status);
+      return r.json();
+    }).then(function (data) {
+      var sigs = data.signals || [];
+      if (sigs.length < 3) return;
+      var widths = [78, 62, 70, 54, 66];
+      list.innerHTML = '';
+      sigs.forEach(function (sig, i) {
+        var li = document.createElement('li');
+        var row = document.createElement('div'); row.className = 'row';
+        var t = document.createElement('span'); t.className = 't'; t.textContent = sig.headline;
+        var time = document.createElement('time');
+        if (sig.published) { time.dateTime = sig.published; time.textContent = hhmm(new Date(sig.published)); }
+        var bar = document.createElement('span'); bar.className = 'bar'; bar.style.width = widths[i % widths.length] + '%';
+        row.appendChild(t); row.appendChild(time); li.appendChild(row); li.appendChild(bar);
+        list.appendChild(li);
+      });
+      var items = list.children, current = 0, timer = null, paused = false;
+      function select(i, instant) {
+        items[current].classList.remove('on');
+        current = i;
+        items[current].classList.add('on');
+        show(sigs[current], instant);
+      }
+      select(0, true);
+      var state = document.getElementById('feed-state');
+      state.textContent = 'Live'; state.classList.add('is-live');
+      document.getElementById('mock').setAttribute('aria-label',
+        'The Ascribd platform showing today\u2019s live signals. Opened: ' + sigs[0].headline + '. ' + sigs[0].angle);
+      if (!reduce) {
+        var mock = document.getElementById('mock');
+        mock.addEventListener('mouseenter', function () { paused = true; });
+        mock.addEventListener('mouseleave', function () { paused = false; });
+        timer = setInterval(function () { if (!paused && !document.hidden) select((current + 1) % items.length); }, 5000);
+      }
+    }).catch(function () { /* keep the example */ });
+  })();
+
   (function () {
     var form = document.getElementById('access-form');
     var status = document.getElementById('form-status');
