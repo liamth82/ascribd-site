@@ -1,9 +1,10 @@
-// Request access form on ascribd.ai -> Leads table in the Ascribd Airtable base.
+// Book a demo form on ascribd.ai -> Leads table in the Ascribd Airtable base.
 // Needs the Vercel env var AIRTABLE_API_KEY (a token with write access to
 // base appko3fPfohjJpna6). Same-origin only; no CORS.
 
 const BASE_ID = 'appko3fPfohjJpna6';
 const LEADS_TABLE = 'tblptjPjSZZa8m1j8';
+const PLANS = ['Platform', 'Managed', 'Not sure yet'];
 const SECTORS = ['Financial services', 'Fintech', 'Insurance', 'Legal', 'Professional services', 'Other'];
 
 // Best-effort rate limit per warm instance: 5 requests per IP per 10 minutes.
@@ -39,6 +40,7 @@ export default async function handler(req, res) {
   const email = clean(body.email, 200).toLowerCase();
   const company = clean(body.company, 160);
   const sector = SECTORS.includes(body.sector) ? body.sector : '';
+  const plan = PLANS.includes(body.plan) ? body.plan : '';
 
   if (!name || !company || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return res.status(400).json({ error: 'missing_fields' });
@@ -54,6 +56,7 @@ export default async function handler(req, res) {
     'Date Submitted': new Date().toISOString().slice(0, 10),
   };
   if (sector) fields.Industry = sector;
+  if (plan) fields['Plan Interest'] = plan;
 
   try {
     const r = await fetch(`https://api.airtable.com/v0/${BASE_ID}/${LEADS_TABLE}`, {
