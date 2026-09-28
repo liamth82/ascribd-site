@@ -4,38 +4,38 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ascribd — PR, engineered</title>
-<meta name="description" content="Ascribd pairs a proprietary intelligence engine with senior PR operators. It sees the story before your market does, and puts you in it.">
+<meta name="description" content="Great PR used to mean a big agency and a bigger retainer. Ascribd pairs its own intelligence technology with senior PR people, so ambitious firms get top-tier coverage without the big-agency model.">
 <link rel="canonical" href="https://ascribd.ai/">
 <meta name="theme-color" content="#0A1628">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ascribd">
 <meta property="og:url" content="https://ascribd.ai/">
 <meta property="og:title" content="Ascribd — PR, engineered">
-<meta property="og:description" content="A proprietary intelligence engine with senior PR operators on top. It sees the story before your market does, and puts you in it.">
+<meta property="og:description" content="Intelligence technology plus senior PR people: top-tier coverage without the big-agency model.">
 <meta property="og:image" content="https://ascribd.ai/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Ascribd — PR, engineered">
-<meta name="twitter:description" content="A proprietary intelligence engine with senior PR operators on top. It sees the story before your market does, and puts you in it.">
+<meta name="twitter:description" content="Intelligence technology plus senior PR people: top-tier coverage without the big-agency model.">
 <meta name="twitter:image" content="https://ascribd.ai/assets/og.png">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&family=Schibsted+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=Schibsted+Grotesk:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
     --ink: #0A1628;
     --ink-raised: #122139;
-    --ink-line: #24344F;
+    --ink-line: #1F2E47;
     --on-ink: #FFFFFF;
     --on-ink-muted: #9AA7BC;
     --paper: #F3F4F6;
     --paper-line: #D6DAE1;
     --text: #0A1628;
     --text-muted: #4B5667;
-    --signal: #F5D547;
+    --signal: #D8C28A;
     --slow: #6B7A92;
     --error: #FF8A7A;
     --gutter: 24px;
@@ -65,202 +65,148 @@
   /* Buttons */
   .btn {
     display: inline-block;
-    font: 700 16px/1 var(--sans);
-    padding: 16px 24px;
-    border-radius: 4px;
+    font: 500 15px/1 var(--sans);
+    letter-spacing: 0.01em;
+    padding: 15px 26px;
+    border-radius: 999px;
     text-decoration: none;
     border: 0;
     cursor: pointer;
     transition: background-color .15s ease;
   }
   .btn-light { background: var(--on-ink); color: var(--ink); }
-  .btn-light:hover { background: var(--signal); }
-  .btn-small { padding: 11px 16px; font-size: 15px; }
+  .btn-light:hover { background: #E9EDF3; }
+  .btn-small { padding: 10px 18px; font-size: 14px; }
 
   /* Header */
   .site-head { background: var(--ink); color: var(--on-ink); }
   .site-head .wrap { display: flex; align-items: center; justify-content: space-between; height: 84px; }
-  .site-head .logo img { width: 122px; }
-  .site-head nav { display: flex; align-items: center; gap: 24px; font-size: 15px; font-weight: 500; }
+  .site-head .logo img { width: 108px; }
+  .site-head nav { display: flex; align-items: center; gap: 28px; font-size: 14px; font-weight: 400; }
   .site-head nav a.plain { text-decoration: none; color: var(--on-ink-muted); }
   .site-head nav a.plain:hover { color: var(--on-ink); }
 
   /* Hero */
-  .hero { background: var(--ink); color: var(--on-ink); padding: 72px 0 96px; }
+  .hero { background: var(--ink); color: var(--on-ink); padding: 96px 0 112px; }
+  .hero .sectors { margin: 96px 0 0; padding-top: 24px; border-top: 1px solid var(--ink-line); font-size: 14px; letter-spacing: 0.01em; color: var(--on-ink-muted); }
   .hero h1 {
-    font-weight: 800;
-    font-size: clamp(60px, 11vw, 148px);
-    line-height: .92;
-    letter-spacing: -0.045em;
-    margin: 0 0 36px;
-  }
-  .hero .lede {
-    font-size: clamp(19px, 2vw, 23px);
-    line-height: 1.45;
-    color: var(--on-ink-muted);
-    max-width: 34em;
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(56px, 9.5vw, 132px);
+    line-height: .98;
+    letter-spacing: -0.025em;
     margin: 0 0 40px;
+    font-variation-settings: "opsz" 72;
   }
-  .hero .lede strong { color: var(--on-ink); font-weight: 500; }
-
-  /* Two clocks */
-  .clocks { margin-top: 104px; border-top: 1px solid var(--ink-line); padding-top: 32px; }
-  .clocks-head { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; flex-wrap: wrap; margin-bottom: 40px; }
-  .clocks-head h2 { font-size: 22px; font-weight: 700; margin: 0; letter-spacing: -0.01em; }
-  .clocks-head p { margin: 0; font-size: 14px; color: var(--on-ink-muted); }
-  .scale { display: grid; grid-template-columns: 160px 1fr; font-size: 13px; color: var(--on-ink-muted); margin-bottom: 8px; }
-  .scale ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 36fr 24fr 40fr; }
-  .scale li { border-left: 1px solid var(--ink-line); padding: 0 0 6px 10px; }
-  .track { display: grid; grid-template-columns: 160px 1fr; align-items: start; padding: 22px 0 0; min-height: 132px; }
-  .track + .track { border-top: 1px solid var(--ink-line); }
-  .track-name { font-weight: 700; font-size: 16px; padding-top: 1px; }
-  .track-name span { display: block; font-weight: 400; font-size: 13px; color: var(--on-ink-muted); }
-  .line { position: relative; height: 110px; }
-  .line::before {
-    content: ""; position: absolute; left: 0; top: 8px; height: 2px;
-    width: var(--span, 100%);
-    background: var(--c);
-    transform-origin: left center;
+  .hero h1 em { font-style: italic; }
+  .hero .lede {
+    font-size: clamp(18px, 1.7vw, 21px);
+    line-height: 1.6;
+    color: var(--on-ink-muted);
+    max-width: 33em;
+    margin: 0 0 44px;
   }
-  .track.fast .line { --c: var(--signal); --span: 40%; }
-  .track.slow .line { --c: var(--slow); }
-  .track.slow .line::before { background: repeating-linear-gradient(90deg, var(--slow) 0 6px, transparent 6px 12px); }
-  .line ol { list-style: none; margin: 0; padding: 0; }
-  .event { position: absolute; left: var(--at); top: 0; width: 112px; }
-  .event::before {
-    content: ""; display: block; width: 18px; height: 18px; border-radius: 50%;
-    background: var(--ink); border: 2px solid var(--c); margin-left: -9px;
-  }
-  .track.fast .event::before { background: var(--signal); }
-  .event time { display: block; margin-top: 10px; font-size: 13px; color: var(--on-ink-muted); font-variant-numeric: tabular-nums; }
-  .event b { display: block; font-size: 14px; font-weight: 500; line-height: 1.3; }
-  .event.last { width: 170px; }
-  .event.end { transform: translateX(-100%); text-align: right; }
-  .event.end::before { margin-left: auto; margin-right: -9px; }
-  .event.story b { font-family: var(--serif); font-style: italic; font-size: 17px; font-weight: 500; }
-  .track.slow .event b { color: var(--on-ink-muted); font-weight: 400; }
+  .hero .lede strong { color: var(--on-ink); font-weight: 400; }
 
   /* Sections on paper */
-  section.block { padding: 112px 0; }
+  section.block { padding: 128px 0; }
   .block h2 {
-    font-size: clamp(34px, 4.6vw, 56px);
-    line-height: 1.04;
-    letter-spacing: -0.03em;
-    font-weight: 800;
-    margin: 0 0 20px;
-    max-width: 16em;
+    font-family: var(--serif);
+    font-size: clamp(34px, 4.2vw, 54px);
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    font-weight: 300;
+    margin: 0 0 24px;
+    max-width: 17em;
+    text-wrap: balance;
   }
-  .block .intro { font-size: 20px; color: var(--text-muted); max-width: 36em; margin: 0 0 56px; }
+  .block .intro { font-size: 18px; line-height: 1.65; color: var(--text-muted); max-width: 36em; margin: 0 0 64px; }
 
   /* Comparison */
   .compare { width: 100%; border-collapse: collapse; }
-  .compare th, .compare td { text-align: left; vertical-align: top; padding: 22px 24px 22px 0; border-top: 1px solid var(--paper-line); }
-  .compare thead th { border-top: 0; padding-top: 0; font-size: 15px; font-weight: 700; }
+  .compare th, .compare td { text-align: left; vertical-align: top; padding: 24px 24px 24px 0; font-size: 17px; border-top: 1px solid var(--paper-line); }
+  .compare thead th { border-top: 0; padding-top: 0; font-size: 14px; font-weight: 500; }
   .compare thead th.us { color: var(--text); }
   .compare thead th.them { color: var(--text-muted); font-weight: 500; }
-  .compare tbody th { font-weight: 500; font-size: 15px; color: var(--text-muted); width: 22%; }
+  .compare tbody th { font-weight: 400; font-size: 14px; color: var(--text-muted); width: 22%; }
   .compare td.them { color: var(--text-muted); width: 34%; }
-  .compare td.us { font-weight: 500; }
+  .compare td.us { font-weight: 400; }
   .compare tbody tr:last-child > * { border-bottom: 1px solid var(--paper-line); }
 
   /* Engine */
   .engine { background: var(--ink); color: var(--on-ink); }
   .engine .intro { color: var(--on-ink-muted); }
-  .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
-  .pillar h3 { font-size: 28px; line-height: 1.1; letter-spacing: -0.02em; font-weight: 700; margin: 0 0 14px; }
-  .pillar p { margin: 0; color: var(--on-ink-muted); font-size: 17px; }
-  .pillar { border-top: 2px solid var(--signal); padding-top: 24px; }
+  .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 56px; }
+  .pillar h3 { font-family: var(--serif); font-size: 28px; line-height: 1.15; font-weight: 400; margin: 0 0 14px; }
+  .pillar p { margin: 0; color: var(--on-ink-muted); font-size: 16px; line-height: 1.65; }
+  .pillar { border-top: 1px solid var(--ink-line); padding-top: 28px; }
 
   /* Audience */
   .audience .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
   .audience h2 { margin: 0; }
-  .audience p { font-size: 20px; color: var(--text-muted); margin: 0 0 20px; max-width: 30em; }
+  .audience p { font-size: 18px; line-height: 1.65; color: var(--text-muted); margin: 0 0 20px; max-width: 30em; }
   .audience p:last-child { margin-bottom: 0; }
-  .audience p strong { color: var(--text); font-weight: 500; }
+  .audience p strong { color: var(--text); font-weight: 400; }
 
   /* Quotes */
   .quotes { border-top: 1px solid var(--paper-line); }
   .quotes .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
   blockquote { margin: 0; }
   blockquote p {
-    font-family: var(--serif); font-style: italic; font-weight: 400;
-    font-size: clamp(21px, 2.1vw, 26px); line-height: 1.38; margin: 0 0 20px;
+    font-family: var(--serif); font-style: italic; font-weight: 300;
+    font-size: clamp(21px, 2.1vw, 26px); line-height: 1.45; margin: 0 0 20px;
     font-variation-settings: "opsz" 36;
   }
   blockquote footer { font-size: 15px; color: var(--text-muted); }
 
   /* Access */
-  .access { background: var(--ink); color: var(--on-ink); padding: 112px 0; }
+  .access { background: var(--ink); color: var(--on-ink); padding: 128px 0; }
   .access .wrap { display: grid; grid-template-columns: 5fr 6fr; gap: 72px; align-items: start; }
-  .access h2 { font-size: clamp(38px, 5vw, 64px); line-height: 1; letter-spacing: -0.035em; font-weight: 800; margin: 0 0 24px; }
-  .access .copy p { color: var(--on-ink-muted); font-size: 19px; margin: 0; max-width: 24em; }
-  form { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .access h2 { font-family: var(--serif); font-size: clamp(36px, 4.4vw, 56px); line-height: 1.06; letter-spacing: -0.015em; font-weight: 300; margin: 0 0 24px; text-wrap: balance; }
+  .access .copy p { color: var(--on-ink-muted); font-size: 18px; line-height: 1.65; margin: 0; max-width: 24em; }
+  form { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 32px; }
   .field { display: flex; flex-direction: column; gap: 8px; }
   .field.full { grid-column: 1 / -1; }
-  label { font-size: 14px; font-weight: 500; color: var(--on-ink-muted); }
+  label { font-size: 13px; font-weight: 400; letter-spacing: 0.01em; color: var(--on-ink-muted); }
   input, select {
     font: 400 17px/1.3 var(--sans);
     color: var(--on-ink);
-    background: var(--ink-raised);
-    border: 1px solid var(--ink-line);
-    border-radius: 4px;
-    padding: 14px 14px;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #3A4B68;
+    border-radius: 0;
+    padding: 12px 0;
     width: 100%;
     appearance: none;
   }
   select {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' stroke='%239AA7BC' stroke-width='1.6' fill='none'/%3E%3C/svg%3E");
-    background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px;
+    background-repeat: no-repeat; background-position: right 2px center; padding-right: 40px;
   }
-  input:focus, select:focus { outline: none; border-color: var(--signal); box-shadow: 0 0 0 1px var(--signal); }
+  input:focus, select:focus { outline: none; border-bottom-color: var(--signal); box-shadow: 0 1px 0 var(--signal); }
+  select option { color: var(--ink); }
   input[aria-invalid="true"] { border-color: var(--error); }
   .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
   .form-foot { grid-column: 1 / -1; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; margin-top: 8px; }
   .form-foot small { font-size: 14px; color: var(--on-ink-muted); max-width: 26em; }
   .status { grid-column: 1 / -1; font-size: 16px; margin: 0; min-height: 1.5em; }
   .status.err { color: var(--error); }
-  .done h3 { font-size: 30px; letter-spacing: -0.02em; margin: 0 0 12px; }
+  .done h3 { font-family: var(--serif); font-weight: 300; font-size: 34px; margin: 0 0 12px; }
   .done p { color: var(--on-ink-muted); font-size: 19px; margin: 0; }
   .done:focus { outline: none; }
 
   /* Footer */
   .site-foot { background: var(--ink); color: var(--on-ink-muted); border-top: 1px solid var(--ink-line); font-size: 14px; }
   .site-foot .wrap { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding-top: 32px; padding-bottom: 40px; flex-wrap: wrap; }
-  .site-foot img { width: 92px; }
+  .site-foot img { width: 84px; }
   .site-foot nav { display: flex; gap: 24px; }
   .site-foot a { color: var(--on-ink-muted); text-decoration: none; }
   .site-foot a:hover { color: var(--on-ink); }
-
-  /* The one moment of motion: the two clocks run on load */
-  @media (prefers-reduced-motion: no-preference) {
-    .js .track .line::before { transform: scaleX(0); }
-    .js .track .event { opacity: 0; }
-    .js .clocks.run .track.fast .line::before { transform: scaleX(1); transition: transform 1.1s cubic-bezier(.3,.7,.2,1) .2s; }
-    .js .clocks.run .track.fast .event { opacity: 1; transition: opacity .35s ease; transition-delay: calc(.25s + var(--i) * .28s); }
-    .js .clocks.run .track.slow .line::before { transform: scaleX(1); transition: transform 3.4s linear 1.3s; }
-    .js .clocks.run .track.slow .event { opacity: 1; transition: opacity .5s ease; transition-delay: calc(1.5s + var(--i) * .8s); }
-  }
 
   /* Tablet */
   @media (max-width: 960px) {
     .pillars { grid-template-columns: 1fr; gap: 40px; max-width: 38em; }
     .audience .wrap, .quotes .grid, .access .wrap { grid-template-columns: 1fr; gap: 40px; }
-  }
-  /* Timeline goes vertical */
-  @media (max-width: 1024px) {
-    .scale { display: none; }
-    .clocks-head { margin-bottom: 8px; }
-    .track { grid-template-columns: 1fr; gap: 16px; min-height: 0; padding: 24px 0; }
-    .line { height: auto; padding-left: 26px; }
-    .line::before { top: 0; bottom: 0; left: 8px; width: 2px !important; height: auto; transform-origin: center top; }
-    .js .track .line::before { transform: scaleY(0); }
-    .js .clocks.run .track .line::before { transform: scaleY(1); }
-    .track.slow .line::before { background: repeating-linear-gradient(180deg, var(--slow) 0 6px, transparent 6px 12px); }
-    .line ol { display: grid; gap: 18px; }
-    .event, .event.last { position: relative; left: 0; width: auto; transform: none; text-align: left; }
-    .event::before, .event.end::before { position: absolute; left: -26px; top: 2px; margin: 0; }
-    .event time { margin-top: 0; }
-    .track.fast .line::before { bottom: 18px; }
   }
   @media (max-width: 640px) {
     :root { --gutter: 16px; }
@@ -268,8 +214,8 @@
     .site-head .wrap { height: 68px; }
     .site-head .logo img { width: 100px; }
     .site-head nav { gap: 16px; }
-    .hero { padding: 40px 0 64px; }
-    .clocks { margin-top: 64px; }
+    .hero { padding: 40px 0 72px; }
+    .hero .sectors { margin-top: 56px; }
     section.block, .access { padding: 72px 0; }
     .block .intro { margin-bottom: 40px; font-size: 18px; }
     form { grid-template-columns: 1fr; }
@@ -293,7 +239,7 @@
     <a class="logo" href="/" aria-label="Ascribd home"><img src="assets/wordmark-white.png" alt="Ascribd" width="783" height="189"></a>
     <nav aria-label="Account">
       <a class="plain" href="https://dashboard.ascribd.ai/signin">Sign in</a>
-      <a class="btn btn-light btn-small" href="#access">Request access</a>
+      <a class="btn btn-light btn-small" href="#access">Book a walkthrough</a>
     </nav>
   </div>
 </header>
@@ -301,59 +247,27 @@
 <main id="main">
   <section class="hero">
     <div class="wrap">
-      <h1>PR,<br>engineered.</h1>
-      <p class="lede"><strong>Ascribd pairs a proprietary intelligence engine with senior PR operators.</strong> It sees the story before your market does, and puts you in it.</p>
-      <a class="btn btn-light" href="#access">Request access</a>
-
-      <div class="clocks" id="clocks">
-        <div class="clocks-head">
-          <h2>One story. Two clocks.</h2>
-          <p>An illustrative news cycle</p>
-        </div>
-        <div class="scale" aria-hidden="true">
-          <span></span>
-          <ol><li>Monday</li><li>Rest of the week</li><li>Weeks two to four</li></ol>
-        </div>
-
-        <div class="track fast">
-          <div class="track-name">Ascribd<span>Engine and operators</span></div>
-          <div class="line">
-            <ol>
-              <li class="event" style="--at: 2%; --i: 0"><time>Mon 06:12</time><b>Story starts to form</b></li>
-              <li class="event" style="--at: 14%; --i: 1"><time>07:40</time><b>Angle and data ready</b></li>
-              <li class="event" style="--at: 26%; --i: 2"><time>09:05</time><b>Pitched to the right journalist</b></li>
-              <li class="event story last" style="--at: 40%; --i: 3"><time>Tue</time><b>Your comment runs</b></li>
-            </ol>
-          </div>
-        </div>
-
-        <div class="track slow">
-          <div class="track-name">Traditional PR<span>Retainer and monthly report</span></div>
-          <div class="line">
-            <ol>
-              <li class="event" style="--at: 50%; --i: 0"><time>Thu</time><b>Someone spots the story</b></li>
-              <li class="event" style="--at: 66%; --i: 1"><time>Week 2</time><b>Response signed off</b></li>
-              <li class="event end last" style="--at: 100%; --i: 2"><time>Week 4</time><b>Monthly report notes the story moved on</b></li>
-            </ol>
-          </div>
-        </div>
-      </div>
+      <h1>PR,<br><em>engineered.</em></h1>
+      <p class="lede">Great PR used to mean a big agency and a bigger retainer. <strong>Ascribd pairs its own intelligence technology with senior PR people, so ambitious firms get top-tier coverage without the big-agency model.</strong></p>
+      <a class="btn btn-light" href="#access">Book a walkthrough</a>
+      <p class="sectors">For financial services, fintech, insurance, legal and professional services firms.</p>
     </div>
   </section>
 
   <section class="block difference" aria-labelledby="difference-h">
     <div class="wrap">
-      <h2 id="difference-h">Traditional PR reports on the news. Ascribd gets there first.</h2>
-      <p class="intro">Same craft, different machinery. The difference shows up in what you're offered, how fast, and whether you can prove it worked.</p>
+      <h2 id="difference-h">Big-agency results, without the big-agency model.</h2>
+      <p class="intro">The craft hasn't changed. What's changed is how much of the work around it technology can now do, and how much of your budget that frees up for the part that earns coverage.</p>
       <table class="compare">
         <thead>
-          <tr><th scope="col"><span class="skip">Aspect</span></th><th scope="col" class="them">Traditional PR</th><th scope="col" class="us">Ascribd</th></tr>
+          <tr><th scope="col"><span class="skip">Aspect</span></th><th scope="col" class="them">Traditional agency</th><th scope="col" class="us">Ascribd</th></tr>
         </thead>
         <tbody>
-          <tr><th scope="row">Starting point</th><td class="them" data-label="Traditional PR">A plan agreed last quarter</td><td class="us" data-label="Ascribd">What moved in your market this morning</td></tr>
-          <tr><th scope="row">Pace</th><td class="them" data-label="Traditional PR">Weeks from idea to pitch</td><td class="us" data-label="Ascribd">Hours from signal to pitch</td></tr>
-          <tr><th scope="row">Who does the work</th><td class="them" data-label="Traditional PR">Junior teams on the legwork</td><td class="us" data-label="Ascribd">Senior operators, with the legwork automated</td></tr>
-          <tr><th scope="row">Proof</th><td class="them" data-label="Traditional PR">Clippings and gut feel</td><td class="us" data-label="Ascribd">Measured against how your market, and the AI tools your buyers now ask, describe you</td></tr>
+          <tr><th scope="row">Starting point</th><td class="them" data-label="Traditional agency">A plan agreed last quarter</td><td class="us" data-label="Ascribd">What moved in your market this morning</td></tr>
+          <tr><th scope="row">Pace</th><td class="them" data-label="Traditional agency">Weeks from idea to pitch</td><td class="us" data-label="Ascribd">Hours from signal to pitch</td></tr>
+          <tr><th scope="row">What you pay for</th><td class="them" data-label="Traditional agency">Layers, hours and account management</td><td class="us" data-label="Ascribd">Pitches, placements and coverage</td></tr>
+          <tr><th scope="row">Who does the work</th><td class="them" data-label="Traditional agency">Junior teams on the legwork</td><td class="us" data-label="Ascribd">Senior operators, with the legwork automated</td></tr>
+          <tr><th scope="row">Proof</th><td class="them" data-label="Traditional agency">Clippings and gut feel</td><td class="us" data-label="Ascribd">Measured against how your market, and the AI tools your buyers now ask, describe you</td></tr>
         </tbody>
       </table>
     </div>
@@ -361,8 +275,8 @@
 
   <section class="block engine" aria-labelledby="engine-h">
     <div class="wrap">
-      <h2 id="engine-h">We don't publish how the engine works.</h2>
-      <p class="intro">We'll happily show you what it does.</p>
+      <h2 id="engine-h">Technology does the legwork. Senior people do the PR.</h2>
+      <p class="intro">Monitoring, research and first drafts used to take a team of juniors, and that's where much of an agency fee went. Ascribd automates it, so your budget goes on experienced people doing the work that lands.</p>
       <div class="pillars">
         <div class="pillar">
           <h3>It listens</h3>
@@ -382,9 +296,9 @@
 
   <section class="block audience" aria-labelledby="audience-h">
     <div class="wrap">
-      <h2 id="audience-h">For firms where credibility is the product.</h2>
+      <h2 id="audience-h">Built for firms where credibility is the product.</h2>
       <div>
-        <p><strong>Financial services, fintech, insurance, legal and professional services.</strong> Sectors where a wrong word costs more than a missed headline, and where the right comment in the right title wins business.</p>
+        <p><strong>From scale-ups to established names.</strong> In sectors where a wrong word costs more than a missed headline, and where the right comment in the right title wins business.</p>
         <p>Built by senior communicators from financial regulation, life sciences and intellectual property law.</p>
       </div>
     </div>
@@ -409,8 +323,8 @@
   <section class="access" id="access" aria-labelledby="access-h">
     <div class="wrap">
       <div class="copy">
-        <h2 id="access-h">Ascribd is invitation-only.</h2>
-        <p>Tell us a little about your firm. If there's a fit, we'll be in touch to arrange a private walkthrough.</p>
+        <h2 id="access-h">See what Ascribd would do for your firm.</h2>
+        <p>Tell us a little about your firm and we'll arrange a walkthrough built around your sector.</p>
       </div>
       <div id="form-area">
         <form id="access-form" novalidate>
@@ -444,8 +358,8 @@
           </div>
           <p class="status" id="form-status" role="status" aria-live="polite"></p>
           <div class="form-foot">
-            <button class="btn btn-light" type="submit" id="f-submit">Request access</button>
-            <small>We'll only use these details to reply to your request.</small>
+            <button class="btn btn-light" type="submit" id="f-submit">Book a walkthrough</button>
+            <small>We'll only use these details to arrange your walkthrough.</small>
           </div>
         </form>
       </div>
@@ -458,7 +372,7 @@
     <img src="assets/wordmark-white.png" alt="Ascribd" width="783" height="189">
     <nav aria-label="Footer">
       <a href="https://dashboard.ascribd.ai/signin">Sign in</a>
-      <a href="#access">Request access</a>
+      <a href="#access">Book a walkthrough</a>
     </nav>
     <span>© 2026 Ascribd Ltd</span>
   </div>
@@ -466,16 +380,6 @@
 
 <script>
   document.documentElement.classList.add('js');
-
-  // Run the two clocks once, when they come into view.
-  (function () {
-    var el = document.getElementById('clocks');
-    if (!('IntersectionObserver' in window)) { el.classList.add('run'); return; }
-    var io = new IntersectionObserver(function (entries) {
-      if (entries[0].isIntersecting) { el.classList.add('run'); io.disconnect(); }
-    }, { threshold: 0.35 });
-    io.observe(el);
-  })();
 
   // Request access
   (function () {
@@ -510,8 +414,8 @@
       }).then(function (r) {
         if (!r.ok) throw new Error(r.status);
         var area = document.getElementById('form-area');
-        area.innerHTML = '<div class="done" tabindex="-1"><h3>Request received.</h3><p>Thanks, ' +
-          name.replace(/[<>&"]/g, '') + '. We’ll be in touch at the address you gave.</p></div>';
+        area.innerHTML = '<div class="done" tabindex="-1"><h3>Thanks, ' +
+          name.replace(/[<>&"]/g, '') + '.</h3><p>We’ll be in touch shortly to find a time for your walkthrough.</p></div>';
         area.firstChild.focus();
       }).catch(function () {
         button.disabled = false;
