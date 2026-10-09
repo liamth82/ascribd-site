@@ -3,22 +3,31 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Get Ascribd | The public relations intelligence platform</title>
-<meta name="description" content="Ascribd is the public relations intelligence platform. More earned media opportunities, hours back every week, and growing AI visibility and share of voice.">
+<title>Ascribd | PR intelligence platform for B2B, financial services and legal PR teams</title>
+<meta name="description" content="Ascribd is the public relations intelligence platform: PR software that wins more earned media opportunities, saves hours every week and grows share of voice and AI visibility. For in-house comms and PR teams in financial services, fintech, insurance, legal and professional services.">
+<meta name="keywords" content="PR intelligence platform, PR software, public relations software, earned media, media opportunities, share of voice, AI visibility, generative engine optimisation, GEO, PR for financial services, fintech PR, legal PR, law firm PR, insurance PR, professional services PR, B2B PR">
 <link rel="canonical" href="https://www.ascribd.ai/">
 <meta name="theme-color" content="#070D19">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ascribd">
 <meta property="og:url" content="https://www.ascribd.ai/">
-<meta property="og:title" content="Get Ascribd">
+<meta property="og:title" content="Get Ascribd: the PR intelligence platform">
 <meta property="og:description" content="The public relations intelligence platform.">
 <meta property="og:image" content="https://www.ascribd.ai/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Get Ascribd">
+<meta name="twitter:title" content="Get Ascribd: the PR intelligence platform">
 <meta name="twitter:description" content="The public relations intelligence platform.">
 <meta name="twitter:image" content="https://www.ascribd.ai/assets/og.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Organization","@id":"https://www.ascribd.ai/#org","name":"Ascribd","legalName":"Ascribd Ltd","url":"https://www.ascribd.ai/","logo":"https://www.ascribd.ai/assets/icon-512.png","email":"liam@ascribd.ai","areaServed":"GB"},
+ {"@type":"SoftwareApplication","name":"Ascribd","url":"https://www.ascribd.ai/","applicationCategory":"BusinessApplication","applicationSubCategory":"PR intelligence platform","operatingSystem":"Web","publisher":{"@id":"https://www.ascribd.ai/#org"},
+  "description":"The public relations intelligence platform for in-house communications and PR teams in financial services, fintech, insurance, legal and professional services: more earned media opportunities, hours saved every week, and growing share of voice and AI visibility.",
+  "audience":{"@type":"BusinessAudience","audienceType":"In-house communications and PR teams"}}
+]}
+</script>
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -58,6 +67,16 @@
   .btn-primary:disabled { opacity: .6; cursor: progress; }
   .btn-small { height: 38px; padding: 0 18px; font-size: 14px; }
 
+  /* The page doesn't scroll: header and hero stay put, the rest scrolls up beneath them. */
+  html, body { height: 100%; overflow: hidden; }
+  body { display: grid; grid-template-rows: auto minmax(0, 1fr); height: 100dvh; }
+  .stage { position: relative; z-index: 2; background: var(--bg); }
+  .scroller { position: relative; min-height: 0; overflow-y: auto; overscroll-behavior: contain; scroll-behavior: smooth;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 56px); mask-image: linear-gradient(to bottom, transparent 0, #000 56px);
+    scrollbar-width: thin; scrollbar-color: rgba(160,182,222,.22) transparent; }
+  @media (prefers-reduced-motion: reduce) { .scroller { scroll-behavior: auto; } }
+  .scroller > :first-child { padding-top: 24px; }
+
   /* Header */
   .site-head .wrap { display: flex; align-items: center; justify-content: space-between; height: 84px; }
   .logo img { width: 116px; }
@@ -66,14 +85,15 @@
   .site-head nav .plain:hover { color: var(--text); }
 
   /* Hero: the one loud thing on the page */
-  .hero { padding: clamp(72px, 16vh, 168px) 0 clamp(64px, 12vh, 128px); }
-  .hero h1 { margin: 0; font-weight: 700; font-size: clamp(64px, 13vw, 184px); line-height: .9; letter-spacing: -0.045em; }
-  .hero .tag { margin: clamp(20px, 3vw, 32px) 0 0; font-size: clamp(20px, 2.4vw, 30px); line-height: 1.3; font-weight: 500; color: var(--muted); letter-spacing: -0.01em; }
+  .hero { padding: clamp(24px, 7vh, 96px) 0 clamp(20px, 4vh, 48px); }
+  .hero h1 { margin: 0; font-weight: 700; font-size: min(15vw, 17vh, 168px); line-height: .9; letter-spacing: -0.045em; }
+  .hero .tag { margin: clamp(12px, 2.4vh, 28px) 0 0; font-size: clamp(20px, 2.4vw, 30px); line-height: 1.3; font-weight: 500; color: var(--muted); letter-spacing: -0.01em; }
   .hero .tag b { color: var(--text); font-weight: 600; letter-spacing: .02em; }
-  .hero .cta { margin-top: clamp(32px, 5vw, 48px); }
+  .hero .cta { margin-top: clamp(16px, 3.6vh, 40px); }
 
   /* Proof points */
-  .proof { border-top: 1px solid var(--line); }
+  .proof { }
+  .proof ul { border-top: 1px solid var(--line); }
   .proof ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); }
   .proof li { padding: 40px 32px 44px 0; }
   .proof li + li { padding-left: 32px; border-left: 1px solid var(--line); }
@@ -95,6 +115,7 @@
   .more .wrap { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(32px, 6vw, 96px); align-items: start; }
   .more h2 { margin: 0; font-size: clamp(34px, 4vw, 48px); line-height: 1.05; font-weight: 600; letter-spacing: -0.03em; }
   .more .copy p { margin: 16px 0 0; color: var(--muted); max-width: 32ch; }
+  .more .copy p.for { margin-top: 28px; font-size: 14px; line-height: 1.5; color: var(--faint); max-width: 36ch; }
   form { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 20px; }
   .field { display: flex; flex-direction: column; gap: 8px; }
   .field.full { grid-column: 1 / -1; }
@@ -137,9 +158,10 @@
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
+<div class="stage">
 <header class="site-head">
   <div class="wrap">
-    <a class="logo" href="/" aria-label="Ascribd home"><img src="assets/wordmark-white.png" alt="Ascribd" width="783" height="189"></a>
+    <a class="logo" href="/" aria-label="Ascribd home"><img src="assets/wordmark-white.png" alt="Ascribd, the PR intelligence platform" width="783" height="189"></a>
     <nav aria-label="Main">
       <a class="plain" href="https://dashboard.ascribd.ai/signin">Sign in</a>
       <a class="btn btn-primary btn-small" href="#more">Find out more</a>
@@ -147,7 +169,6 @@
   </div>
 </header>
 
-<main id="main">
   <section class="hero" aria-labelledby="hero-h">
     <div class="wrap">
       <h1 id="hero-h">Get Ascribd.</h1>
@@ -155,10 +176,13 @@
       <div class="cta"><a class="btn btn-primary" href="#more">Find out more</a></div>
     </div>
   </section>
+</div>
+
+<main id="main" class="scroller" tabindex="-1">
 
   <section class="proof" aria-labelledby="proof-h">
     <div class="wrap">
-      <h2 id="proof-h" class="sr">What clients get</h2>
+      <h2 id="proof-h" class="sr">What PR teams get from Ascribd</h2>
       <ul>
         <li>
           <span class="fig">+18<small>%</small></span>
@@ -197,6 +221,7 @@
       <div class="copy">
         <h2 id="more-h">Find out more.</h2>
         <p>Leave your details and we’ll be in touch.</p>
+        <p class="for">For in-house communications and PR teams in financial services, fintech, insurance, legal and professional services.</p>
       </div>
       <div id="form-area">
         <form id="access-form" novalidate>
@@ -225,7 +250,6 @@
       </div>
     </div>
   </section>
-</main>
 
 <footer class="site-foot">
   <div class="wrap">
@@ -234,6 +258,7 @@
     <span>© 2026 Ascribd Ltd</span>
   </div>
 </footer>
+</main>
 
 <script>
   (function () {
