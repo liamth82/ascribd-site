@@ -3,286 +3,134 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ascribd — PR, engineered</title>
-<meta name="description" content="Ascribd is a PR intelligence platform. It spots the stories your market is about to care about, finds your angle and drafts the pitch. Run it yourself, or have our senior team run it for you.">
+<title>Get Ascribd | The public relations intelligence platform</title>
+<meta name="description" content="Ascribd is the public relations intelligence platform. More earned media opportunities, hours back every week, and growing AI visibility and share of voice.">
 <link rel="canonical" href="https://www.ascribd.ai/">
 <meta name="theme-color" content="#070D19">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ascribd">
 <meta property="og:url" content="https://www.ascribd.ai/">
-<meta property="og:title" content="Ascribd — PR, engineered">
-<meta property="og:description" content="The PR intelligence platform. Run it yourself, or have our senior team run it for you.">
+<meta property="og:title" content="Get Ascribd">
+<meta property="og:description" content="The public relations intelligence platform.">
 <meta property="og:image" content="https://www.ascribd.ai/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Ascribd — PR, engineered">
-<meta name="twitter:description" content="The PR intelligence platform. Run it yourself, or have our senior team run it for you.">
+<meta name="twitter:title" content="Get Ascribd">
+<meta name="twitter:description" content="The public relations intelligence platform.">
 <meta name="twitter:image" content="https://www.ascribd.ai/assets/og.png">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     color-scheme: dark;
     --bg: #070D19;
-    --surface: #0C1424;
-    --surface-2: #111B2F;
-    --line: rgba(160, 182, 222, 0.12);
-    --line-strong: rgba(160, 182, 222, 0.22);
+    --line: rgba(160, 182, 222, 0.14);
     --text: #E9EEF6;
     --muted: #8C98AE;
     --faint: #5B6A83;
     --accent: #8AB4FF;
     --accent-ink: #06101F;
-    --live: #5FD4A6;
     --error: #FF8F80;
-    --gutter: 24px;
-    --max: 1200px;
+    --gutter: clamp(20px, 5vw, 56px);
+    --max: 1120px;
     --sans: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
   }
   *, *::before, *::after { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--sans);
-    font-size: 17px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
   img { display: block; max-width: 100%; height: auto; }
   a { color: inherit; }
   :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
-  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
   .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-  .skip { position: absolute; left: -9999px; }
-  .skip:focus { left: 16px; top: 16px; background: var(--accent); color: var(--accent-ink); padding: 8px 12px; z-index: 10; }
+  .skip { position: absolute; left: -999px; top: 8px; background: var(--accent); color: var(--accent-ink); padding: 8px 14px; border-radius: 6px; z-index: 10; }
+  .skip:focus { left: 8px; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
 
-  h1, h2, h3 { font-weight: 500; text-wrap: balance; }
-
-  /* Buttons */
-  .btn {
-    display: inline-flex; align-items: center; justify-content: center;
-    font: 500 15px/1 var(--sans);
-    padding: 13px 20px;
-    border-radius: 8px;
-    text-decoration: none;
-    border: 1px solid transparent;
-    cursor: pointer;
-    transition: background-color .15s ease, border-color .15s ease;
-  }
-  .btn-primary { background: var(--text); color: var(--accent-ink); }
-  .btn-primary:hover { background: #FFFFFF; }
-  .btn-ghost { color: var(--text); border-color: var(--line-strong); }
-  .btn-ghost:hover { border-color: var(--muted); }
-  .btn-small { padding: 9px 14px; font-size: 14px; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 46px; padding: 0 22px; border-radius: 999px; border: 0;
+    font: 600 15px/1 var(--sans); text-decoration: none; cursor: pointer; transition: background-color .15s ease, color .15s ease; }
+  .btn-primary { background: var(--accent); color: var(--accent-ink); }
+  .btn-primary:hover { background: #A9C8FF; }
+  .btn-primary:disabled { opacity: .6; cursor: progress; }
+  .btn-small { height: 38px; padding: 0 18px; font-size: 14px; }
 
   /* Header */
-  .site-head { position: relative; z-index: 2; border-bottom: 1px solid var(--line); }
-  .site-head .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 24px; }
-  .site-head .logo img { width: 96px; }
-  .site-head nav { display: flex; align-items: center; gap: 28px; font-size: 14px; }
-  .site-head nav a.plain { text-decoration: none; color: var(--muted); }
-  .site-head nav a.plain:hover { color: var(--text); }
+  .site-head .wrap { display: flex; align-items: center; justify-content: space-between; height: 84px; }
+  .logo img { width: 116px; }
+  .site-head nav { display: flex; align-items: center; gap: 22px; font-size: 15px; }
+  .site-head nav .plain { color: var(--muted); text-decoration: none; }
+  .site-head nav .plain:hover { color: var(--text); }
 
-  /* Hero */
-  .hero { position: relative; overflow: hidden; padding: 96px 0 112px; }
-  .hero::before {
-    content: ""; position: absolute; inset: -20% -10% auto 35%; height: 900px;
-    background: radial-gradient(closest-side, rgba(138, 180, 255, 0.16), rgba(138, 180, 255, 0) 70%);
-    pointer-events: none;
-  }
-  .hero .wrap { position: relative; display: grid; grid-template-columns: 5fr 7fr; gap: 64px; align-items: center; }
-  .hero h1 {
-    font-size: clamp(52px, 7.2vw, 92px);
-    line-height: 1;
-    letter-spacing: -0.04em;
-    margin: 0 0 28px;
-  }
-  .hero .lede { font-size: 19px; line-height: 1.6; color: var(--muted); max-width: 30em; margin: 0 0 36px; }
-  .hero .lede strong { color: var(--text); font-weight: 400; }
-  .ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+  /* Hero: the one loud thing on the page */
+  .hero { padding: clamp(72px, 16vh, 168px) 0 clamp(64px, 12vh, 128px); }
+  .hero h1 { margin: 0; font-weight: 700; font-size: clamp(64px, 13vw, 184px); line-height: .9; letter-spacing: -0.045em; }
+  .hero .tag { margin: clamp(20px, 3vw, 32px) 0 0; font-size: clamp(20px, 2.4vw, 30px); line-height: 1.3; font-weight: 500; color: var(--muted); letter-spacing: -0.01em; }
+  .hero .tag b { color: var(--text); font-weight: 600; letter-spacing: .02em; }
+  .hero .cta { margin-top: clamp(32px, 5vw, 48px); }
 
-  /* Product mock */
-  .mock {
-    background: var(--surface);
-    border: 1px solid var(--line-strong);
-    border-radius: 14px;
-    box-shadow: 0 40px 120px -40px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255,255,255,0.02) inset;
-    display: grid; grid-template-columns: 42% 58%;
-    min-height: 440px;
-    overflow: hidden;
-    font-size: 13px;
-  }
-  .mock-list { border-right: 1px solid var(--line); padding: 16px 0; }
-  .mock-head { display: flex; align-items: center; justify-content: space-between; padding: 0 16px 12px; color: var(--muted); font-size: 12px; }
-  .feed-state { display: inline-flex; align-items: center; gap: 6px; color: var(--faint); }
-  .feed-state::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--faint); }
-  .feed-state.is-live { color: var(--live); }
-  .feed-state.is-live::before { background: var(--live); box-shadow: 0 0 0 0 rgba(95, 212, 166, .6); }
-  .mock-list li { transition: background-color .3s ease; }
-  .mock-detail > * { transition: opacity .25s ease; }
-  .mock-detail.swap > * { opacity: 0; }
-  @media (prefers-reduced-motion: no-preference) {
-    .feed-state.is-live::before { animation: pulse 2.4s ease-out infinite; }
-    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(95,212,166,.55); } 80%, 100% { box-shadow: 0 0 0 7px rgba(95,212,166,0); } }
-  }
-  .mock-list ul { list-style: none; margin: 0; padding: 0; }
-  .mock-list li { padding: 12px 16px; border-top: 1px solid var(--line); display: grid; gap: 8px; }
-  .mock-list li.on { background: var(--surface-2); box-shadow: inset 2px 0 0 var(--accent); }
-  .mock-list .row { display: flex; justify-content: space-between; gap: 12px; }
-  .mock-list .t { color: var(--text); font-weight: 500; line-height: 1.35; }
-  .mock-list li:not(.on) .t { color: var(--muted); font-weight: 400; }
-  .mock-list time { color: var(--faint); font-variant-numeric: tabular-nums; }
-  .bar { display: block; height: 6px; border-radius: 3px; background: var(--line-strong); }
-  .mock-detail { padding: 20px 22px; display: flex; flex-direction: column; gap: 18px; }
-  .mock-detail h3 { font-size: 18px; letter-spacing: -0.01em; margin: 0; line-height: 1.3; }
-  .chips { display: flex; gap: 6px; flex-wrap: wrap; }
-  .chip { font-size: 11.5px; padding: 3px 9px; border-radius: 999px; border: 1px solid var(--line-strong); color: var(--muted); }
-  .chip.good { color: var(--live); border-color: rgba(95, 212, 166, 0.35); }
-  .mock-sec { display: grid; gap: 8px; }
-  .mock-sec > span { font-size: 11.5px; color: var(--faint); }
-  .mock-sec p { margin: 0; color: var(--text); line-height: 1.5; }
-  .people { display: grid; gap: 10px; }
-  .person { display: grid; grid-template-columns: 26px 1fr; gap: 10px; align-items: center; }
-  .avatar { width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg, #22314D, #2E4268); }
-  .person .bars { display: grid; gap: 5px; }
-  .mock-actions { margin-top: auto; display: flex; gap: 8px; }
-  .mock-btn { font-size: 12.5px; padding: 8px 12px; border-radius: 7px; background: var(--accent); color: var(--accent-ink); font-weight: 500; }
-  .mock-btn.ghost { background: transparent; color: var(--muted); border: 1px solid var(--line-strong); }
+  /* Proof points */
+  .proof { border-top: 1px solid var(--line); }
+  .proof ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); }
+  .proof li { padding: 40px 32px 44px 0; }
+  .proof li + li { padding-left: 32px; border-left: 1px solid var(--line); }
+  .proof .fig { display: block; height: 76px; font-size: 64px; line-height: 1; font-weight: 600; letter-spacing: -0.04em; color: var(--text); font-variant-numeric: lining-nums tabular-nums; }
+  .proof .fig small { font-size: .42em; font-weight: 500; letter-spacing: -0.01em; color: var(--muted); margin-left: 4px; }
+  .proof .fig svg { width: 132px; height: 64px; }
+  .proof p { margin: 14px 0 0; max-width: 26ch; font-size: 17px; line-height: 1.45; color: var(--text); }
+  .proof p span { display: block; margin-top: 6px; font-size: 14px; color: var(--faint); }
 
-  .sectors { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-  .sectors p { margin: 0; padding: 20px 0; font-size: 14px; color: var(--muted); }
+  /* Testimonials */
+  .quotes { padding: clamp(80px, 12vw, 128px) 0; }
+  .quotes .grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 80px); }
+  .quotes blockquote { margin: 0; }
+  .quotes blockquote p { margin: 0; font-size: clamp(19px, 1.8vw, 23px); line-height: 1.5; letter-spacing: -0.005em; text-indent: -0.4em; }
+  .quotes footer { margin-top: 18px; font-size: 14px; color: var(--muted); }
 
-  /* Sections */
-  section.block { padding: 128px 0; }
-  section.block.follow { padding-top: 0; }
-  .block h2 { font-size: clamp(34px, 4.2vw, 52px); line-height: 1.08; letter-spacing: -0.03em; margin: 0 0 20px; max-width: 18em; }
-  .block .intro { font-size: 18px; color: var(--muted); max-width: 36em; margin: 0 0 64px; }
-
-  .features { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid var(--line); }
-  .feature { padding: 36px 40px 40px 0; border-bottom: 1px solid var(--line); }
-  .feature:nth-child(odd) { border-right: 1px solid var(--line); }
-  .feature:nth-child(even) { padding-left: 40px; padding-right: 0; }
-  .feature h3 { font-size: 20px; letter-spacing: -0.01em; margin: 0 0 10px; }
-  .feature p { margin: 0; color: var(--muted); max-width: 30em; }
-
-  .compare { width: 100%; border-collapse: collapse; }
-  .compare th, .compare td { text-align: left; vertical-align: top; padding: 20px 24px 20px 0; border-top: 1px solid var(--line); }
-  .compare thead th { border-top: 0; padding-top: 0; font-size: 14px; font-weight: 500; color: var(--muted); }
-  .compare thead th.us { color: var(--text); }
-  .compare tbody th { font-weight: 400; font-size: 14px; color: var(--faint); width: 20%; }
-  .compare td.them { color: var(--muted); width: 36%; }
-  .compare tbody tr:last-child > * { border-bottom: 1px solid var(--line); }
-
-  /* Plans */
-  .plans { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-  .plan {
-    border: 1px solid var(--line-strong); border-radius: 14px; padding: 36px;
-    background: var(--surface);
-    display: flex; flex-direction: column; gap: 20px;
-  }
-  .plan.managed { background: linear-gradient(180deg, var(--surface-2), var(--surface)); border-color: rgba(138, 180, 255, 0.35); }
-  .plan h3 { font-size: 26px; letter-spacing: -0.02em; margin: 0; }
-  .plan .for { margin: -8px 0 0; color: var(--muted); }
-  .plan ul { list-style: none; margin: 0; padding: 20px 0 0; border-top: 1px solid var(--line); display: grid; gap: 12px; }
-  .plan li { position: relative; padding-left: 26px; }
-  .plan li::before {
-    content: ""; position: absolute; left: 2px; top: 8px; width: 10px; height: 6px;
-    border-left: 1.5px solid var(--accent); border-bottom: 1.5px solid var(--accent); transform: rotate(-45deg);
-  }
-  .plan .btn { align-self: flex-start; margin-top: auto; }
-  .plans-note { margin: 24px 0 0; font-size: 14px; color: var(--faint); }
-
-  /* Quotes */
-  .quotes { border-top: 1px solid var(--line); }
-  .quotes .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
-  blockquote { margin: 0; }
-  blockquote p { font-size: clamp(19px, 1.8vw, 22px); line-height: 1.5; letter-spacing: -0.01em; margin: 0 0 18px; color: var(--text); }
-  blockquote footer { font-size: 14px; color: var(--faint); }
-
-  /* Demo form */
-  .access { padding: 128px 0; border-top: 1px solid var(--line); }
-  .access .wrap { display: grid; grid-template-columns: 5fr 6fr; gap: 72px; align-items: start; }
-  .access h2 { font-size: clamp(34px, 4.2vw, 52px); line-height: 1.08; letter-spacing: -0.03em; margin: 0 0 20px; }
-  .access .copy p { color: var(--muted); font-size: 18px; margin: 0; max-width: 24em; }
-  form { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  /* Find out more */
+  .more { border-top: 1px solid var(--line); padding: clamp(72px, 10vw, 112px) 0 clamp(80px, 12vw, 128px); }
+  .more .wrap { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(32px, 6vw, 96px); align-items: start; }
+  .more h2 { margin: 0; font-size: clamp(34px, 4vw, 48px); line-height: 1.05; font-weight: 600; letter-spacing: -0.03em; }
+  .more .copy p { margin: 16px 0 0; color: var(--muted); max-width: 32ch; }
+  form { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 20px; }
   .field { display: flex; flex-direction: column; gap: 8px; }
   .field.full { grid-column: 1 / -1; }
-  label { font-size: 13px; color: var(--muted); }
-  input, select {
-    font: 400 16px/1.3 var(--sans);
-    color: var(--text);
-    background: var(--surface);
-    border: 1px solid var(--line-strong);
-    border-radius: 8px;
-    padding: 12px 14px;
-    width: 100%;
-    appearance: none;
-  }
-  select {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' stroke='%238C98AE' stroke-width='1.6' fill='none'/%3E%3C/svg%3E");
-    background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px;
-  }
-  select option { background: #0C1424; color: #E9EEF6; }
-  input:focus, select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(138, 180, 255, 0.18); }
+  label { font-size: 14px; color: var(--muted); }
+  input { height: 50px; padding: 0 16px; border-radius: 12px; border: 1px solid var(--line); background: rgba(255, 255, 255, .03);
+    color: var(--text); font: 400 16px var(--sans); transition: border-color .15s ease; }
+  input:hover { border-color: rgba(160, 182, 222, .26); }
+  input:focus { outline: none; border-color: var(--accent); }
   input[aria-invalid="true"] { border-color: var(--error); }
-  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
-  .form-foot { grid-column: 1 / -1; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
-  .form-foot small { font-size: 13px; color: var(--faint); max-width: 26em; }
-  .status { grid-column: 1 / -1; font-size: 15px; margin: 0; min-height: 1.5em; }
+  .hp { position: absolute; left: -9999px; }
+  .form-foot { grid-column: 1 / -1; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; margin-top: 6px; }
+  .form-foot small { color: var(--faint); font-size: 13px; }
+  .status { grid-column: 1 / -1; margin: 0; font-size: 15px; color: var(--muted); }
+  .status:empty { display: none; }
   .status.err { color: var(--error); }
-  .done { border: 1px solid var(--line-strong); border-radius: 14px; padding: 32px; background: var(--surface); }
-  .done h3 { font-size: 24px; letter-spacing: -0.02em; margin: 0 0 8px; }
-  .done p { color: var(--muted); margin: 0; }
+  .done h3 { margin: 0; font-size: 28px; font-weight: 600; letter-spacing: -0.02em; }
+  .done p { margin: 10px 0 0; color: var(--muted); }
   .done:focus { outline: none; }
 
   /* Footer */
-  .site-foot { border-top: 1px solid var(--line); color: var(--faint); font-size: 14px; }
-  .site-foot .wrap { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding-top: 28px; padding-bottom: 36px; flex-wrap: wrap; }
-  .site-foot img { width: 76px; opacity: .8; }
-  .site-foot nav { display: flex; gap: 24px; }
-  .site-foot a { color: var(--muted); text-decoration: none; }
-  .site-foot a:hover { color: var(--text); }
+  .site-foot { border-top: 1px solid var(--line); }
+  .site-foot .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; height: 88px; font-size: 14px; color: var(--faint); }
+  .site-foot img { width: 92px; opacity: .8; }
+  .site-foot nav { display: flex; gap: 22px; }
+  .site-foot nav a { color: var(--muted); text-decoration: none; }
+  .site-foot nav a:hover { color: var(--text); }
 
-  @media (max-width: 1080px) {
-    .hero .wrap { grid-template-columns: 1fr; gap: 56px; }
-    .hero .copy { max-width: 40em; }
+  @media (max-width: 860px) {
+    .proof ul { grid-template-columns: 1fr; }
+    .proof li, .proof li + li { padding: 32px 0; border-left: 0; }
+    .proof li + li { border-top: 1px solid var(--line); }
+    .quotes .grid, .more .wrap { grid-template-columns: 1fr; }
   }
-  @media (max-width: 900px) {
-    .plans, .quotes .grid, .access .wrap { grid-template-columns: 1fr; gap: 40px; }
-    .plans { gap: 16px; }
-    .features { grid-template-columns: 1fr; }
-    .feature, .feature:nth-child(even) { padding: 28px 0 32px; border-right: 0; }
-    .feature:nth-child(odd) { border-right: 0; }
-  }
-  @media (max-width: 640px) {
-    :root { --gutter: 16px; }
-    body { font-size: 16px; }
-    .site-head nav { gap: 16px; }
-    .site-head nav .hide-sm { display: none; }
-    .hero { padding: 56px 0 72px; }
-    .hero .lede { font-size: 17px; }
-    .mock { grid-template-columns: 1fr; min-height: 0; }
-    .mock-list { display: none; }
-    section.block, .access { padding: 80px 0; }
-    section.block.follow { padding-top: 0; }
-    .block .intro { margin-bottom: 40px; font-size: 17px; }
-    .plan { padding: 28px 24px; }
+  @media (max-width: 560px) {
     form { grid-template-columns: 1fr; }
-    .compare thead { display: none; }
-    .compare, .compare tbody, .compare tr, .compare th, .compare td { display: block; width: auto !important; }
-    .compare tr { border-top: 1px solid var(--line); padding: 20px 0; }
-    .compare tbody tr:last-child { border-bottom: 1px solid var(--line); }
-    .compare th, .compare td, .compare tbody tr:last-child > * { border: 0; padding: 0; }
-    .compare tbody th { margin-bottom: 10px; }
-    .compare td::before { display: block; font-size: 12px; color: var(--faint); content: attr(data-label); }
-    .compare td.them { margin-bottom: 12px; }
+    .site-foot .wrap { flex-wrap: wrap; height: auto; padding-top: 28px; padding-bottom: 28px; }
   }
 </style>
 </head>
@@ -293,142 +141,42 @@
   <div class="wrap">
     <a class="logo" href="/" aria-label="Ascribd home"><img src="assets/wordmark-white.png" alt="Ascribd" width="783" height="189"></a>
     <nav aria-label="Main">
-      <a class="plain hide-sm" href="#product">Product</a>
-      <a class="plain hide-sm" href="#plans">Plans</a>
       <a class="plain" href="https://dashboard.ascribd.ai/signin">Sign in</a>
-      <a class="btn btn-primary btn-small" href="#demo">Book a demo</a>
+      <a class="btn btn-primary btn-small" href="#more">Find out more</a>
     </nav>
   </div>
 </header>
 
 <main id="main">
-  <section class="hero">
+  <section class="hero" aria-labelledby="hero-h">
     <div class="wrap">
-      <div class="copy">
-        <h1>PR, engineered.</h1>
-        <p class="lede">Great PR used to need a big agency and a bigger retainer. <strong>Ascribd spots the stories your market is about to care about, finds your angle and drafts the pitch.</strong> Run it yourself, or have our senior team run it for you.</p>
-        <div class="ctas">
-          <a class="btn btn-primary" href="#demo">Book a demo</a>
-          <a class="btn btn-ghost" href="#plans">See plans</a>
-        </div>
-      </div>
-
-      <div class="mock" id="mock" role="img" aria-label="The Ascribd platform: today's story signals for UK financial and professional services, with one opened to show a suggested angle and best-fit journalists.">
-        <div class="mock-list" aria-hidden="true">
-          <div class="mock-head"><span>Today's signals</span><span class="feed-state" id="feed-state">Example</span></div>
-          <ul id="sig-list">
-            <li class="on"><div class="row"><span class="t">SME lending appetite shifts</span><time>06:12</time></div><span class="bar" style="width: 78%"></span></li>
-            <li><div class="row"><span class="t">Regulator signals a review</span><time>07:05</time></div><span class="bar" style="width: 62%"></span></li>
-            <li><div class="row"><span class="t">Rival launches savings product</span><time>08:30</time></div><span class="bar" style="width: 70%"></span></li>
-            <li><div class="row"><span class="t">Payroll costs back in the news</span><time>09:14</time></div><span class="bar" style="width: 54%"></span></li>
-            <li><div class="row"><span class="t">Regional growth figures due</span><time>10:02</time></div><span class="bar" style="width: 66%"></span></li>
-          </ul>
-        </div>
-        <div class="mock-detail" id="sig-detail" aria-hidden="true">
-          <div class="chips"><span class="chip good" id="sig-sector">Financial services</span><span class="chip" id="sig-age">Window: 48 hours</span></div>
-          <h3 id="sig-title">SME lending appetite shifts</h3>
-          <div class="mock-sec">
-            <span>Suggested angle</span>
-            <p id="sig-angle">A lender's regional data gives an early read on the slowdown.</p>
-            <span class="bar" style="width: 92%"></span>
-            <span class="bar" style="width: 74%"></span>
-          </div>
-          <div class="mock-sec">
-            <span>Best-fit journalists</span>
-            <div class="people">
-              <div class="person"><span class="avatar"></span><span class="bars"><span class="bar" style="width: 46%"></span><span class="bar" style="width: 30%; opacity: .6"></span></span></div>
-              <div class="person"><span class="avatar"></span><span class="bars"><span class="bar" style="width: 38%"></span><span class="bar" style="width: 34%; opacity: .6"></span></span></div>
-              <div class="person"><span class="avatar"></span><span class="bars"><span class="bar" style="width: 52%"></span><span class="bar" style="width: 26%; opacity: .6"></span></span></div>
-            </div>
-          </div>
-          <div class="mock-actions"><span class="mock-btn">Draft pitch</span><span class="mock-btn ghost">Save for later</span></div>
-        </div>
-      </div>
+      <h1 id="hero-h">Get Ascribd.</h1>
+      <p class="tag"><b>THE</b> public relations intelligence platform.</p>
+      <div class="cta"><a class="btn btn-primary" href="#more">Find out more</a></div>
     </div>
   </section>
 
-  <div class="sectors">
-    <div class="wrap"><p>Built for financial services, fintech, insurance, legal and professional services firms.</p></div>
-  </div>
-
-  <section class="block" id="product" aria-labelledby="product-h">
+  <section class="proof" aria-labelledby="proof-h">
     <div class="wrap">
-      <h2 id="product-h">Everything between the news and the coverage.</h2>
-      <p class="intro">Ascribd does the work that used to fill an agency's week, so your time goes on the part that earns coverage.</p>
-      <div class="features">
-        <div class="feature">
-          <h3>Signals</h3>
-          <p>Know what your market is about to care about while the story is still forming, not after it's run.</p>
-        </div>
-        <div class="feature">
-          <h3>Angles</h3>
-          <p>Each signal comes with an angle for your firm: the news peg, the data behind it and the journalists most likely to run it.</p>
-        </div>
-        <div class="feature">
-          <h3>Drafting</h3>
-          <p>Pitches, comment and posts drafted in your voice, ready to review and send.</p>
-        </div>
-        <div class="feature">
-          <h3>Measurement</h3>
-          <p>See what landed, what it moved, and how your firm is described in the press and in the AI tools your buyers now use.</p>
-        </div>
-      </div>
+      <h2 id="proof-h" class="sr">What clients get</h2>
+      <ul>
+        <li>
+          <span class="fig">+18<small>%</small></span>
+          <p>more earned media opportunities within three months<span>Average</span></p>
+        </li>
+        <li>
+          <span class="fig">8<small>hours</small></span>
+          <p>saved per client, every week<span>Average</span></p>
+        </li>
+        <li>
+          <span class="fig" aria-hidden="true"><svg viewBox="0 0 132 64" fill="none"><path d="M2 58 C 26 54, 34 44, 52 42 S 82 30, 96 22 S 120 8, 130 4" stroke="#8AB4FF" stroke-width="3" stroke-linecap="round"/></svg></span>
+          <p>Growing AI visibility and share of voice</p>
+        </li>
+      </ul>
     </div>
   </section>
 
-  <section class="block follow" aria-labelledby="difference-h">
-    <div class="wrap">
-      <h2 id="difference-h">Big-agency results, without the big-agency model.</h2>
-      <p class="intro">The craft hasn't changed. How much of the work around it technology can do has.</p>
-      <table class="compare">
-        <thead>
-          <tr><th scope="col"><span class="sr">Aspect</span></th><th scope="col" class="them">Traditional agency</th><th scope="col" class="us">Ascribd</th></tr>
-        </thead>
-        <tbody>
-          <tr><th scope="row">Starting point</th><td class="them" data-label="Traditional agency">A plan agreed last quarter</td><td class="us" data-label="Ascribd">What moved in your market this morning</td></tr>
-          <tr><th scope="row">Pace</th><td class="them" data-label="Traditional agency">Weeks from idea to pitch</td><td class="us" data-label="Ascribd">Hours from signal to pitch</td></tr>
-          <tr><th scope="row">What you pay for</th><td class="them" data-label="Traditional agency">Layers, hours and account management</td><td class="us" data-label="Ascribd">Intelligence, pitches and coverage</td></tr>
-          <tr><th scope="row">Proof</th><td class="them" data-label="Traditional agency">Clippings and gut feel</td><td class="us" data-label="Ascribd">Coverage and visibility, tracked continuously</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section class="block follow" id="plans" aria-labelledby="plans-h">
-    <div class="wrap">
-      <h2 id="plans-h">Two ways to use Ascribd.</h2>
-      <p class="intro">Use the platform with your own team, or add ours.</p>
-      <div class="plans">
-        <div class="plan">
-          <h3>Platform</h3>
-          <p class="for">For in-house teams who want to run their own PR, with the engine behind them.</p>
-          <ul>
-            <li>Sector signals and story alerts</li>
-            <li>Angles with best-fit journalists</li>
-            <li>Pitch, comment and post drafting</li>
-            <li>Coverage and AI visibility tracking</li>
-            <li>Onboarding and support from our team</li>
-          </ul>
-          <a class="btn btn-primary" href="#demo" data-plan="Platform">Book a demo</a>
-        </div>
-        <div class="plan managed">
-          <h3>Managed</h3>
-          <p class="for">Everything in Platform, run for you by senior PR people.</p>
-          <ul>
-            <li>Everything in Platform</li>
-            <li>A senior PR lead on your account</li>
-            <li>Pitching, relationships and follow-through</li>
-            <li>Comment and content written and placed for you</li>
-            <li>Strategy that moves with your market</li>
-          </ul>
-          <a class="btn btn-primary" href="#demo" data-plan="Managed">Talk to us</a>
-        </div>
-      </div>
-      <p class="plans-note">Pricing on request.</p>
-    </div>
-  </section>
-
-  <section class="block quotes" aria-labelledby="quotes-h">
+  <section class="quotes" aria-labelledby="quotes-h">
     <div class="wrap">
       <h2 id="quotes-h" class="sr">What clients say</h2>
       <div class="grid">
@@ -444,11 +192,11 @@
     </div>
   </section>
 
-  <section class="access" id="demo" aria-labelledby="demo-h">
+  <section class="more" id="more" aria-labelledby="more-h">
     <div class="wrap">
       <div class="copy">
-        <h2 id="demo-h">See Ascribd on your market.</h2>
-        <p>Tell us a little about your firm and we'll show you Ascribd running on your sector.</p>
+        <h2 id="more-h">Find out more.</h2>
+        <p>Leave your details and we’ll be in touch.</p>
       </div>
       <div id="form-area">
         <form id="access-form" novalidate>
@@ -457,32 +205,12 @@
             <input id="f-name" name="name" autocomplete="name" required maxlength="120">
           </div>
           <div class="field">
-            <label for="f-email">Work email</label>
-            <input id="f-email" name="email" type="email" autocomplete="email" required maxlength="200">
-          </div>
-          <div class="field">
             <label for="f-company">Company</label>
             <input id="f-company" name="company" autocomplete="organization" required maxlength="160">
           </div>
-          <div class="field">
-            <label for="f-sector">Sector</label>
-            <select id="f-sector" name="sector">
-              <option value="">Choose one</option>
-              <option>Financial services</option>
-              <option>Fintech</option>
-              <option>Insurance</option>
-              <option>Legal</option>
-              <option>Professional services</option>
-              <option>Other</option>
-            </select>
-          </div>
           <div class="field full">
-            <label for="f-plan">Interested in</label>
-            <select id="f-plan" name="plan">
-              <option>Not sure yet</option>
-              <option>Platform</option>
-              <option>Managed</option>
-            </select>
+            <label for="f-email">Work email</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required maxlength="200">
           </div>
           <div class="hp" aria-hidden="true">
             <label for="f-website">Leave this empty</label>
@@ -490,8 +218,8 @@
           </div>
           <p class="status" id="form-status" role="status" aria-live="polite"></p>
           <div class="form-foot">
-            <button class="btn btn-primary" type="submit" id="f-submit">Book a demo</button>
-            <small>We'll only use these details to arrange your demo.</small>
+            <button class="btn btn-primary" type="submit" id="f-submit">Get in touch</button>
+            <small>We’ll only use these details to reply to you.</small>
           </div>
         </form>
       </div>
@@ -502,123 +230,36 @@
 <footer class="site-foot">
   <div class="wrap">
     <img src="assets/wordmark-white.png" alt="Ascribd" width="783" height="189">
-    <nav aria-label="Footer">
-      <a href="#product">Product</a>
-      <a href="#plans">Plans</a>
-      <a href="https://dashboard.ascribd.ai/signin">Sign in</a>
-    </nav>
+    <nav aria-label="Footer"><a href="https://dashboard.ascribd.ai/signin">Sign in</a></nav>
     <span>© 2026 Ascribd Ltd</span>
   </div>
 </footer>
 
 <script>
-  // Live signals from /api/signals (refreshed every 3 hours). Falls back to the example above.
-  (function () {
-    var list = document.getElementById('sig-list');
-    var detail = document.getElementById('sig-detail');
-    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var tz = 'Europe/London';
-
-    function hhmm(d) {
-      try { return d.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: tz }); } catch (e) { return ''; }
-    }
-    function ago(d) {
-      var mins = Math.max(1, Math.round((Date.now() - d.getTime()) / 60000));
-      if (mins < 60) return mins + ' min ago';
-      var h = Math.round(mins / 60);
-      return h < 24 ? h + (h === 1 ? ' hour ago' : ' hours ago') : 'Yesterday';
-    }
-    function show(sig, instant) {
-      var apply = function () {
-        document.getElementById('sig-sector').textContent = sig.sector;
-        document.getElementById('sig-age').textContent = sig.published ? ago(new Date(sig.published)) : 'Today';
-        document.getElementById('sig-title').textContent = sig.headline;
-        document.getElementById('sig-angle').textContent = sig.angle;
-        detail.classList.remove('swap');
-      };
-      if (instant || reduce) return apply();
-      detail.classList.add('swap');
-      setTimeout(apply, 250);
-    }
-
-    fetch('/api/signals').then(function (r) {
-      if (!r.ok) throw new Error(r.status);
-      return r.json();
-    }).then(function (data) {
-      var sigs = data.signals || [];
-      if (sigs.length < 3) return;
-      var widths = [78, 62, 70, 54, 66];
-      list.innerHTML = '';
-      sigs.forEach(function (sig, i) {
-        var li = document.createElement('li');
-        var row = document.createElement('div'); row.className = 'row';
-        var t = document.createElement('span'); t.className = 't'; t.textContent = sig.headline;
-        var time = document.createElement('time');
-        if (sig.published) { time.dateTime = sig.published; time.textContent = hhmm(new Date(sig.published)); }
-        var bar = document.createElement('span'); bar.className = 'bar'; bar.style.width = widths[i % widths.length] + '%';
-        row.appendChild(t); row.appendChild(time); li.appendChild(row); li.appendChild(bar);
-        list.appendChild(li);
-      });
-      var items = list.children, current = 0, timer = null, paused = false;
-      function select(i, instant) {
-        items[current].classList.remove('on');
-        current = i;
-        items[current].classList.add('on');
-        show(sigs[current], instant);
-      }
-      select(0, true);
-      var state = document.getElementById('feed-state');
-      state.textContent = 'Live'; state.classList.add('is-live');
-      document.getElementById('mock').setAttribute('aria-label',
-        'The Ascribd platform showing today\u2019s live signals. Opened: ' + sigs[0].headline + '. ' + sigs[0].angle);
-      if (!reduce) {
-        var mock = document.getElementById('mock');
-        mock.addEventListener('mouseenter', function () { paused = true; });
-        mock.addEventListener('mouseleave', function () { paused = false; });
-        timer = setInterval(function () { if (!paused && !document.hidden) select((current + 1) % items.length); }, 5000);
-      }
-    }).catch(function () { /* keep the example */ });
-  })();
-
   (function () {
     var form = document.getElementById('access-form');
     var status = document.getElementById('form-status');
     var button = document.getElementById('f-submit');
-
-    // Plan buttons preselect the plan in the form.
-    document.querySelectorAll('[data-plan]').forEach(function (a) {
-      a.addEventListener('click', function () { form.elements.plan.value = a.getAttribute('data-plan'); });
-    });
-
     function fail(msg, field) {
-      status.textContent = msg;
-      status.className = 'status err';
+      status.textContent = msg; status.className = 'status err';
       if (field) { field.setAttribute('aria-invalid', 'true'); field.focus(); }
     }
-
     form.addEventListener('input', function (e) { e.target.removeAttribute('aria-invalid'); });
-
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var f = form.elements;
       var name = f.name.value.trim(), email = f.email.value.trim(), company = f.company.value.trim();
       if (!name) return fail('Add your name.', f.name);
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return fail('Add a work email we can reply to.', f.email);
       if (!company) return fail('Add your company name.', f.company);
-
-      status.textContent = 'Sending…';
-      status.className = 'status';
-      button.disabled = true;
-
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return fail('Add a work email we can reply to.', f.email);
+      status.textContent = 'Sending…'; status.className = 'status'; button.disabled = true;
       fetch('/api/request-access', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: name, email: email, company: company, sector: f.sector.value, plan: f.plan.value, website: f.website.value })
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: name, email: email, company: company, website: f.website.value })
       }).then(function (r) {
         if (!r.ok) throw new Error(r.status);
         var area = document.getElementById('form-area');
-        area.innerHTML = '<div class="done" tabindex="-1"><h3>Thanks, ' + name.replace(/[<>&"]/g, '') +
-          '.</h3><p>We’ll be in touch shortly to set up your demo.</p></div>';
+        area.innerHTML = '<div class="done" tabindex="-1"><h3>Thanks, ' + name.replace(/[<>&"]/g, '') + '.</h3><p>We’ll be in touch shortly.</p></div>';
         area.firstChild.focus();
       }).catch(function () {
         button.disabled = false;
